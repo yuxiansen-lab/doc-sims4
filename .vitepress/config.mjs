@@ -63,7 +63,7 @@ export default defineConfig({
             text: '🟢 全年龄向 (SFW)',
             collapsed: true, // 默认收起
             items: [
-              { text: 'MCCC 控制中心', link: '/mccc' },
+              { text: 'MCCC 控制中心', link: '/mods/mccc' },
               { text: 'UI 界面修改', link: '/ui-cheats' },
               { text: '功能性小模组', link: '/mods/safe/general' }
             ]
