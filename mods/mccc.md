@@ -5,10 +5,30 @@ description: 模拟人生4 最强大的功能性模组 MCCC 下载与安装教�
 
 # 💎 Mc Command Center (MCCC) 
 
-MCCC 是《模拟人生4》的“上帝面板”。如果你只能安装一个模组，那绝对是它。它允许你控制人口进化、自动结婚生子、修改市民关系、清理垃圾文件等。
+> **当前版本**：2026_1_1 (适配游戏版本 PC: 1.121.342.1030 / Mac: 1.121.342.1230)
+> **作者**：TURBODRIVER
+> **更新日期**：2026-02-03 16:18:39
 
 ---
 
+::: info 🟢 全年龄向内容 (SFW)
+本页面所展示的模组均不包含成人限制级内容。
+所有内容均符合模拟人生4官方分级建议，适合所有年龄段玩家放心浏览与安装。
+:::
+
+::: warning ⚠️ 脚本安全警示
+**严禁存放过深**：
+请务必保证 `.ts4script` 文件位于 `Mods/WickedWhims/` 目录下。
+- ✅ 正确：`Mods/WickedWhims/WickedWhims.ts4script`
+- ❌ 错误：`Mods/功能类/绅士/WickedWhims/WickedWhims.ts4script`
+放错路径将导致游戏内**没有任何菜单显示**。
+:::
+
+---
+## 模组概述
+MCCC 是《模拟人生4》的“上帝面板”。如果你只能安装一个模组，那绝对是它。它允许你控制人口进化、自动结婚生子、修改市民关系、清理垃圾文件等。
+
+---
 
 ## 🛠 安装步骤
 
@@ -19,6 +39,15 @@ MCCC 是《模拟人生4》的“上帝面板”。如果你只能安装一个�
 4. **注意层级**：MCCC 的脚本文件（.ts4script）**最多只能放在一层子文件夹内**。
    * ✅ `Mods/MCCC_Folder/xxx.ts4script`
    * ❌ `Mods/Tools/MCCC_Folder/xxx.ts4script` (会导致无法识别)
+5.**汉化教程**:下载好汉化的文件，将文件/文件夹（汉化一般都为后缀.package的文件）放入（一定是第一层！不能过深！！）
+<br>`Documents/Electronic Arts/The Sims 4/Mods/`
+
+::: danger 注意事项
+**脚本深度限制**：
+请确保 `.ts4script` 文件就在 `Mods` 文件夹的一级子目录下。
+- ✅ 正确：`Mods/WickedWhimsMod/WickedWhims.ts4script`
+- ❌ 错误：`Mods/功能类/绅士包/WickedWhimsMod/WickedWhims.ts4script`
+:::
 
 ---
 
@@ -46,8 +75,8 @@ MCCC 是《模拟人生4》的“上帝面板”。如果你只能安装一个�
 
 | 版本类型 | 推荐人群 | 下载链接 |
 | :--- | :--- | :--- |
-| **最新稳定版** | 普通玩家 (推荐) | [官方发布页](https://deaderpool-mccc.com/) |
-| **中文汉化补丁** | 习惯中文界面的玩家 | [此处替换为你的汉化链接] |
+| **最新稳定版** | 普通玩家 (推荐) | [官方发布页](https://deaderpool-mccc.com/downloads.html)) |
+| **中文汉化补丁** | 习惯中文界面的玩家 | [中文汉化包推荐（请尊重原作者）](https://www.abonnie.uk/mc)  |
 
 > [!TIP] 提示
 > MCCC 每次游戏大版本更新（如发布新扩充包）后，通常都需要更新模组版本，否则可能导致 UI 报错。
