@@ -38,7 +38,7 @@ export default defineConfig({
         text: '快速分类',
         items: [
           { text: '🟢 全年龄', link: '/mods/safe/' },
-          { text: '🔞 限制级', link: '/mods/cas/ww' }
+          { text: '🔞 限制级', link: '/mods/cas/' }
         ]
       }
       */
@@ -74,7 +74,7 @@ export default defineConfig({
             items: [
               { 
                 text: '<img src="/ww-icon.png" class="ww-icon-sidebar"> WW 绅士包', 
-                link: '/mods/cas/ww' 
+                link: '/mods/cas/wickedwhimsmod' 
               }
             ]
           }
