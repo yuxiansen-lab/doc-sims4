@@ -65,9 +65,15 @@ WickedWhims 是一款为《模拟人生 4》提供极高自由度与真实体验
 
 ---
 
-## 🔗 相关资源
-- 1.[官方下载页 (Turbodriver)](https://wicked.cc/mods/admin/wickedwhims/) 2.[备用下载页](https://wickedwhimsmod.com/download)
-- [中文汉化包推荐](https://www.abonnie.cc/zh/wicked-whims) (请支持原作者)
+## 🔗 相关资源- 模组下载
+
+| 版本类型 | 推荐人群 | 下载链接 |
+| :--- | :--- | :--- |
+| **最新稳定版** | 普通玩家 (推荐) | [官方下载页 (Turbodriver)](https://wicked.cc/mods/admin/wickedwhims/)<br>[备用下载页](https://wickedwhimsmod.com/download |
+| **中文汉化补丁** | 习惯中文界面的玩家 | [中文汉化包推荐](https://www.abonnie.cc/zh/wicked-whims) （请尊重原作者）|
+
+> [!TIP] 提示
+> MCCC 每次游戏大版本更新（如发布新扩充包）后，通常都需要更新模组版本，否则可能导致 UI 报错。
 
 ---
 
