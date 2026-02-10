@@ -159,3 +159,40 @@
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
+
+
+/* 1. 定义模拟人生字体 */
+@font-face {
+  font-family: 'Sims4Font';
+  /* 路径指向你 public/fonts/ 下的文件，后缀改为 .woff */
+  src: url('/fonts/SimsSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. 应用到全站变量 */
+:root {
+  /* 基础字体：优先使用 Sims4Font */
+  --vp-font-family-base: 'Sims4Font', "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --vp-font-family-mono: 'Sims4Font', monospace;
+}
+
+/* 3. 针对文本渲染进行平滑优化 */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 4. 标题加强（模拟人生风格通常标题很显眼） */
+h1, h2, h3, h4, .VPNavBar .title {
+  font-family: 'Sims4Font', sans-serif !important;
+  letter-spacing: 0.03em; /* 稍微增加间距，更有游戏感 */
+}
+
+/* 5. 如果你之前那个侧边栏图标也要对齐字体 */
+.VPSidebarItem.level-0 .text {
+  font-family: 'Sims4Font', sans-serif;
+  font-weight: 600;
+}
