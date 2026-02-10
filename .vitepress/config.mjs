@@ -33,7 +33,6 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '详情', link: '/markdown-examples' },
       // 【示例：你可以随时解开这里的注释来添加顶部的下拉框】
-      /*
       {
         text: '快速分类',
         items: [
@@ -41,7 +40,6 @@ export default defineConfig({
           { text: '🔞 限制级', link: '/mods/cas/' }
         ]
       }
-      */
     ],
 
     // --- 侧边栏 (多级折叠结构) ---
@@ -56,7 +54,7 @@ export default defineConfig({
       },
       
       {
-        text: '📦 模组中心 (内容分级)', 
+        text: '📦 模组中心', 
         collapsed: false, // 设置为 false，让这两个子分类直接露出来
         items: [
           {
