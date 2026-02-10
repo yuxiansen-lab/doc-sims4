@@ -37,9 +37,20 @@ export default defineConfig({
       }
     },
     
+    // --- 导航栏 ---
     nav: [
       { text: '首页', link: '/' },
-      { text: '详情', link: '/markdown-examples' }
+      { text: '详情', link: '/markdown-examples' },
+      
+      // =========== 以后如果你想加折叠菜单，参考下面这个格式 ===========
+      // {
+      //   text: '我是折叠菜单',
+      //   items: [
+      //     { text: '子选项 A', link: '/path-a' },
+      //     { text: '子选项 B', link: '/path-b' }
+      //   ]
+      // }
+      // ==========================================================
     ],
 
     sidebar: [
@@ -58,7 +69,11 @@ export default defineConfig({
         text: '📦 模组中心 (MODS)', 
         collapsed: false, 
         items: [
-          { text: '<img src="/ww-icon.png" class="ww-icon-sidebar"> WW 绅士包', link: '/wickedwhimsmod' }
+          // ⚠️ 
+          { 
+            text: '<img src="/ww-icon.png" class="ww-icon-sidebar"> WW 绅士包', 
+            link: '/mods/cas/wickedwhimsmod' 
+          }
         ]
       }
     ],
