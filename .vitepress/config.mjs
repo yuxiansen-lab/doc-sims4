@@ -29,18 +29,18 @@ export default defineConfig({
     },
     
     // --- 顶部导航栏 ---
-    nav: [
+     nav: [
       { text: '首页', link: '/' },
-      { text: '详情', link: '/markdown-examples' },
+      { text: '前言', link: '/foreword' },
       // 【示例：你可以随时解开这里的注释来添加顶部的下拉框】
-      {
+    /*  {
         text: '快速分类',
         items: [
           { text: '🟢 全年龄', link: '/mods/safe/' },
           { text: '🔞 限制级', link: '/mods/cas/' }
         ]
       }
-    ],
+    ], */
 
     // --- 侧边栏 (多级折叠结构) ---
     sidebar: [
@@ -49,7 +49,8 @@ export default defineConfig({
         collapsed: false, // 默认展开，因为这是入门必看的
         items: [
           { text: '前言', link: '/foreword' },
-          { text: '安装基础教程', link: '/install-basic' }
+          { text: '安装基础教程', link: '/install-basic' },
+          { text: 'Markdown 管理手册', link: '/markdown-instruction' }
         ]
       },
       
