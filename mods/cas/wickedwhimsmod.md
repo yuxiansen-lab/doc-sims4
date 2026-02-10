@@ -1,5 +1,5 @@
 ---
-layout: doc
+outline: deep
 ---
 
 <script setup>
@@ -8,7 +8,7 @@ import AgeGate from './.vitepress/theme/components/AgeGate.vue'
 
 <AgeGate />
 
-# 📦 模组介绍：WickedWhims (绅士包) 🔞⚠️⚠️成人内容！！
+# <img src="/ww-icon.png" class="ww-heart-main"> WickedWhims/(WW) (绅士包) 🔞⚠️⚠️成人内容！！
 
 > **当前版本**：v185f (适配游戏版本 1.121)
 > **作者**：TURBODRIVER

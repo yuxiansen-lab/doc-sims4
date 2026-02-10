@@ -1,139 +1,161 @@
 /**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ * ============================================================
+ * 第一部分：全局变量 (Colors & Basics)
+ * 控制全站的颜色、圆角和基础视觉
+ * ============================================================
  */
 
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create a accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- * -------------------------------------------------------------------------- */
-
 :root {
-  --vp-c-default-1: var(--vp-c-gray-1);
-  --vp-c-default-2: var(--vp-c-gray-2);
-  --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: var(--vp-c-gray-soft);
+  /* --- 模拟人生 4 核心配色 --- */
+  --vp-c-brand-1: #5bb32d;           /* 鲜绿色：链接、主要文字、绿水晶色 */
+  --vp-c-brand-2: #4ca125;           /* 深绿色：悬停状态颜色 */
+  --vp-c-brand-3: #3e8d1d;           /* 浓绿色：点击激活颜色 */
+  --vp-c-brand-soft: rgba(91, 179, 45, 0.1); /* 浅绿背景：用于提示框等 */
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  /* --- UI 圆角 (让网站不再方方正正，更像游戏窗口) --- */
+  --vp-button-brand-border-radius: 25px; /* 按钮大圆角 */
+  --vp-card-border-radius: 15px;         /* 卡片大圆角 */
+  --vp-nav-logo-height: 32px;            /* 导航栏 Logo 高度 */
 
+  /* --- 提示框与警告框的配色同步 --- */
   --vp-c-tip-1: var(--vp-c-brand-1);
-  --vp-c-tip-2: var(--vp-c-brand-2);
-  --vp-c-tip-3: var(--vp-c-brand-3);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
-
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
-
-  --vp-c-danger-1: var(--vp-c-red-1);
-  --vp-c-danger-2: var(--vp-c-red-2);
-  --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
 }
 
 /**
- * Component: Button
- * -------------------------------------------------------------------------- */
+ * ============================================================
+ * 第二部分：首页英雄区 (Home Hero Section)
+ * 修改首页那个巨大的标题和背景光晕
+ * ============================================================
+ */
 
 :root {
-  --vp-button-brand-border: transparent;
-  --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-brand-3);
-  --vp-button-brand-hover-border: transparent;
-  --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
-  --vp-button-brand-active-border: transparent;
-  --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  /* 首页标题渐变：从绿水晶绿到模拟人生蓝 */
+  --vp-home-hero-name-background: linear-gradient(135deg, #5bb32d 0%, #2da4ff 100%);
+  
+  /* 首页图片背后的发光颜色 (模拟绿水晶散发的光芒) */
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(91, 179, 45, 0.6) 50%, rgba(71, 202, 255, 0.6) 50%);
+  --vp-home-hero-image-filter: blur(60px); /* 模糊度 */
+}
+
+/* 首页大标题字体加粗，并加上微弱阴影提升质感 */
+.VPHero .name {
+  filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+  font-weight: 900 !important;
 }
 
 /**
- * Component: Home
- * -------------------------------------------------------------------------- */
+ * ============================================================
+ * 第三部分：组件样式 (Components)
+ * 卡片、按钮、侧边栏的具体设计
+ * ============================================================
+ */
 
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
-  --vp-home-hero-image-filter: blur(44px);
+/* --- 特性卡片 (Features) --- */
+.VPFeature {
+  border: 2px solid #f0f7ff !important; /* 浅蓝色边框，模拟游戏菜单 */
+  background-color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 162, 255, 0.05); /* 淡淡的蓝色投影 */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 弹性缩放动画 */
 }
 
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
+/* 鼠标移入卡片时，向上弹起并变绿 */
+.VPFeature:hover {
+  transform: scale(1.03) translateY(-5px);
+  border-color: #5bb32d !important;
+  box-shadow: 0 10px 25px rgba(91, 179, 45, 0.15);
+}
+
+/* --- 侧边栏 (Sidebar) --- */
+/* 当你选中某个教程时，左侧菜单文字变绿加粗 */
+.VPSidebarItem.is-active > .item > .link .text {
+  color: #5bb32d !important;
+  font-weight: bold;
+}
+
+/* --- 按钮 (Buttons) --- */
+.VPButton.brand {
+  background-color: #5bb32d !important;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.VPButton.brand:hover {
+  background-color: #4ca125 !important;
+  transform: scale(1.05); /* 悬停时稍微变大，增加点击感 */
+}
+
+/**
+ * ============================================================
+ * 第四部分：动画与特效 (Animations & Effects)
+ * 让你的绿水晶 (Plumbob) 动起来
+ * ============================================================
+ */
+
+/* 绿水晶 Logo 样式 */
+.plumbob-logo {
+  width: 24px;
+  height: auto;
+  margin-right: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  /* 应用 3D 旋转动画 */
+  transform-style: preserve-3d; 
+  animation: plumbob-rotate 3.5s linear infinite;
+  /* 绿色发光特效 */
+  filter: drop-shadow(0 0 6px rgba(91, 179, 45, 0.7));
+}
+
+/* 定义 3D 纵向旋转：模拟游戏内旋转效果 */
+@keyframes plumbob-rotate {
+  from {
+    transform: perspective(400px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(400px) rotateY(360deg);
   }
 }
 
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
+/* 呼吸灯效果：用于文字图标或小标记 */
+.plumbob-mini {
+  margin-right: 8px;
+  display: inline-block;
+  animation: plumbob-idle 3s ease-in-out infinite;
 }
 
-/**
- * Component: Custom Block
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-custom-block-tip-border: transparent;
-  --vp-custom-block-tip-text: var(--vp-c-text-1);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
-  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+@keyframes plumbob-idle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.1); }
 }
 
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
 
-.DocSearch {
-  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+/* WWB */
+/* 侧边栏小图标基础样式 */
+.ww-icon-sidebar {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  border-radius: 4px;
 }
 
+/* 在文章大标题里用，这个类名 */
+.ww-heart-main {
+  width: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  
+  /* 赋予它“邪恶”的紫色发光 */
+  filter: drop-shadow(0 0 5px rgba(189, 52, 254, 0.8));
+  
+  /* 模拟心跳动画 */
+  animation: ww-beat 1.2s ease-in-out infinite;
+}
+
+/* 心跳动画：稍微放大并回弹 */
+@keyframes ww-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}

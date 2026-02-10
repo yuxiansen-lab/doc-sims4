@@ -36,9 +36,6 @@ export default defineConfig({
         }
       }
     },
-
-    // https://vitepress.dev/reference/default-theme-config
-    logo: "/mdidocument.png", 
     
     nav: [
       { text: '首页', link: '/' },
@@ -61,7 +58,7 @@ export default defineConfig({
         text: '📦 模组中心 (MODS)', 
         collapsed: false, 
         items: [
-          { text: 'WW 绅士包', link: '/wickedwhimsmod' }
+          { text: '<img src="/ww-icon.png" class="ww-icon-sidebar"> WW 绅士包', link: '/wickedwhimsmod' }
         ]
       }
     ],
