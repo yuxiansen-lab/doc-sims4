@@ -2,10 +2,6 @@
 outline: deep
 ---
 
-<script setup>
-import AgeGate from './.vitepress/theme/components/AgeGate.vue'
-</script>
-
 <AgeGate />
 
 # <img src="/ww-icon.png" class="ww-heart-main"> WickedWhims/(WW) (绅士包) 🔞⚠️⚠️成人内容！！
