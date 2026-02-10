@@ -1,12 +1,11 @@
+
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/",
   title: "SulSul! Sims4 Mods", 
   description: "模拟人生4 模组安装与中文教程站",
   
-  // 注入 Bing 验证标签和 Sitemap
   head: [
     ['meta', { name: 'msvalidate.01', content: 'CA8108492CD30C720C25C8FA6F32E0B5' }]
   ],
@@ -15,64 +14,69 @@ export default defineConfig({
   },
 
   themeConfig: {
-    // 🔍 新增：本地搜索功能
+    // 🔍 本地搜索配置
     search: {
       provider: 'local',
       options: {
         translations: {
-          button: {
-            buttonText: '搜索文档',
-            buttonAriaLabel: '搜索文档'
-          },
+          button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
           modal: {
             noResultsText: '无法找到相关结果',
-            resetButtonTitle: '清除查询条件',
-            footer: {
-              selectText: '选择',
-              navigateText: '切换',
-              closeText: '关闭'
-            }
+            resetButtonTitle: '清除查询条件'
           }
         }
       }
     },
     
-    // --- 导航栏 ---
+    // --- 顶部导航栏 ---
     nav: [
       { text: '首页', link: '/' },
       { text: '详情', link: '/markdown-examples' },
-      
-      // =========== 以后如果你想加折叠菜单，参考下面这个格式 ===========
-      // {
-      //   text: '我是折叠菜单',
-      //   items: [
-      //     { text: '子选项 A', link: '/path-a' },
-      //     { text: '子选项 B', link: '/path-b' }
-      //   ]
-      // }
-      // ==========================================================
+      // 【示例：你可以随时解开这里的注释来添加顶部的下拉框】
+      /*
+      {
+        text: '快速分类',
+        items: [
+          { text: '🟢 全年龄', link: '/mods/safe/' },
+          { text: '🔞 限制级', link: '/mods/cas/ww' }
+        ]
+      }
+      */
     ],
 
+    // --- 侧边栏 (多级折叠结构) ---
     sidebar: [
-      // 第一个分组：基础索引
       {
-        text: '📖 索引',
+        text: '📖 基础索引',
+        collapsed: false, // 默认展开，因为这是入门必看的
         items: [
           { text: '前言', link: '/foreword' },
-          { text: 'SulSul! 教程 (必看!)', link: '/install-basic' },
-          { text: 'Markdown 管理手册', link: '/markdown-instruction' }
+          { text: '安装基础教程', link: '/install-basic' }
         ]
       },
       
-      // 第二个分组：模组中心
       {
-        text: '📦 模组中心 (MODS)', 
-        collapsed: false, 
+        text: '📦 模组中心 (内容分级)', 
+        collapsed: false, // 设置为 false，让这两个子分类直接露出来
         items: [
-          // ⚠️ 
-          { 
-            text: '<img src="/ww-icon.png" class="ww-icon-sidebar"> WW 绅士包', 
-            link: '/mods/cas/wickedwhimsmod' 
+          {
+            text: '🟢 全年龄向 (SFW)',
+            collapsed: true, // 默认收起
+            items: [
+              { text: 'MCCC 控制中心', link: '/mccc' },
+              { text: 'UI 界面修改', link: '/ui-cheats' },
+              { text: '功能性小模组', link: '/mods/safe/general' }
+            ]
+          },
+          {
+            text: '🔞 限制级内容 (18+)',
+            collapsed: true, // 默认收起，保持页面整洁
+            items: [
+              { 
+                text: '<img src="/ww-icon.png" class="ww-icon-sidebar"> WW 绅士包', 
+                link: '/mods/cas/ww' 
+              }
+            ]
           }
         ]
       }
