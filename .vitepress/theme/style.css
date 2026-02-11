@@ -110,6 +110,14 @@
   filter: drop-shadow(0 0 5px rgba(189, 52, 254, 0.8));
   animation: ww-beat 1.2s ease-in-out infinite;
 }
+.ww-icon-sidebar {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 
 @keyframes ww-beat {
   0%, 100% { transform: scale(1); }
