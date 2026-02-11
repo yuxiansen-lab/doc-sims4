@@ -1,21 +1,32 @@
+@@ -1,198 +1,141 @@
 /**
  * ============================================================
  * 第一部分：全局变量 (Colors & Basics)
+ * 控制全站的颜色、圆角和基础视觉
  * ============================================================
  */
 
 :root {
   /* --- 模拟人生 4 核心配色 --- */
+  --vp-c-brand-1: #5bb32d;           /* 鲜绿色：链接、主要文字、绿水晶色 */
+  --vp-c-brand-2: #4ca125;           /* 深绿色：悬停状态颜色 */
+  --vp-c-brand-3: #3e8d1d;           /* 浓绿色：点击激活颜色 */
+  --vp-c-brand-soft: rgba(91, 179, 45, 0.1); /* 浅绿背景：用于提示框等 */
   --vp-c-brand-1: #5bb32d;
   --vp-c-brand-2: #4ca125;
   --vp-c-brand-3: #3e8d1d;
   --vp-c-brand-soft: rgba(91, 179, 45, 0.1);
 
+  /* --- UI 圆角 (让网站不再方方正正，更像游戏窗口) --- */
+  --vp-button-brand-border-radius: 25px; /* 按钮大圆角 */
+  --vp-card-border-radius: 15px;         /* 卡片大圆角 */
+  --vp-nav-logo-height: 32px;            /* 导航栏 Logo 高度 */
   /* --- UI 圆角 --- */
   --vp-button-brand-border-radius: 25px;
   --vp-card-border-radius: 15px;
   --vp-nav-logo-height: 32px;
 
+  /* --- 提示框与警告框的配色同步 --- */
   /* --- 提示框配色同步 --- */
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
@@ -24,15 +35,21 @@
 /**
  * ============================================================
  * 第二部分：首页英雄区 (Home Hero Section)
+ * 修改首页那个巨大的标题和背景光晕
  * ============================================================
  */
 
 :root {
+  /* 首页标题渐变：从绿水晶绿到模拟人生蓝 */
   --vp-home-hero-name-background: linear-gradient(135deg, #5bb32d 0%, #2da4ff 100%);
+  
+  /* 首页图片背后的发光颜色 (模拟绿水晶散发的光芒) */
   --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(91, 179, 45, 0.6) 50%, rgba(71, 202, 255, 0.6) 50%);
+  --vp-home-hero-image-filter: blur(60px); /* 模糊度 */
   --vp-home-hero-image-filter: blur(60px);
 }
 
+/* 首页大标题字体加粗，并加上微弱阴影提升质感 */
 .VPHero .name {
   filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
   font-weight: 900 !important;
@@ -40,12 +57,18 @@
 
 /**
  * ============================================================
+ * 第三部分：组件样式 (Components)
+ * 卡片、按钮、侧边栏的具体设计
  * 第三部分：组件样式 (Components) - 已修复黑暗模式
  * ============================================================
  */
 
 /* --- 特性卡片 (Features) --- */
 .VPFeature {
+  border: 2px solid #f0f7ff !important; /* 浅蓝色边框，模拟游戏菜单 */
+  background-color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 162, 255, 0.05); /* 淡淡的蓝色投影 */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 弹性缩放动画 */
   /* 【核心修改】删掉 #ffffff，改用变量，这样深色模式下会自动变暗 */
   background-color: var(--vp-c-bg-soft) !important; 
   /* 边框也改用变量，避免在深色模式下太刺眼 */
@@ -54,36 +77,46 @@
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* 鼠标移入卡片时，向上弹起并变绿 */
 .VPFeature:hover {
   transform: scale(1.03) translateY(-5px);
+  border-color: #5bb32d !important;
   border-color: var(--vp-c-brand-1) !important;
   box-shadow: 0 10px 25px rgba(91, 179, 45, 0.15);
 }
 
 /* --- 侧边栏 (Sidebar) --- */
+/* 当你选中某个教程时，左侧菜单文字变绿加粗 */
 .VPSidebarItem.is-active > .item > .link .text {
+  color: #5bb32d !important;
   color: var(--vp-c-brand-1) !important;
   font-weight: bold;
 }
 
 /* --- 按钮 (Buttons) --- */
 .VPButton.brand {
+  background-color: #5bb32d !important;
   background-color: var(--vp-c-brand-1) !important;
   transition: all 0.2s ease;
   font-weight: bold;
 }
 
 .VPButton.brand:hover {
+  background-color: #4ca125 !important;
+  transform: scale(1.05); /* 悬停时稍微变大，增加点击感 */
   background-color: var(--vp-c-brand-2) !important;
   transform: scale(1.05);
 }
 
 /**
  * ============================================================
+ * 第四部分：动画与特效 (Animations & Effects)
+ * 让你的绿水晶 (Plumbob) 动起来
  * 第四部分：动画、特效与字体
  * ============================================================
  */
 
+/* 绿水晶 Logo 样式 */
 /* 绿水晶 Logo */
 .plumbob-logo {
   width: 24px;
@@ -91,58 +124,109 @@
   margin-right: 12px;
   display: inline-block;
   vertical-align: middle;
+  /* 应用 3D 旋转动画 */
   transform-style: preserve-3d; 
   animation: plumbob-rotate 3.5s linear infinite;
+  /* 绿色发光特效 */
   filter: drop-shadow(0 0 6px rgba(91, 179, 45, 0.7));
 }
 
+/* 定义 3D 纵向旋转：模拟游戏内旋转效果 */
 @keyframes plumbob-rotate {
+  from {
+    transform: perspective(400px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(400px) rotateY(360deg);
+  }
   from { transform: perspective(400px) rotateY(0deg); }
   to { transform: perspective(400px) rotateY(360deg); }
 }
 
+/* 呼吸灯效果：用于文字图标或小标记 */
+.plumbob-mini {
+  margin-right: 8px;
+  display: inline-block;
+  animation: plumbob-idle 3s ease-in-out infinite;
+}
+
+@keyframes plumbob-idle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.1); }
+}
+
+
+/* WWB */
+/* 侧边栏小图标基础样式 */
+.ww-icon-sidebar {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  border-radius: 4px;
+}
+
+/* 在文章大标题里用，这个类名 */
 /* WW 心跳 */
 .ww-heart-main {
   width: 32px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 12px;
+  
+  /* 赋予它“邪恶”的紫色发光 */
   filter: drop-shadow(0 0 5px rgba(189, 52, 254, 0.8));
+  
+  /* 模拟心跳动画 */
   animation: ww-beat 1.2s ease-in-out infinite;
 }
-.ww-icon-sidebar {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-}
 
-
-
+/* 心跳动画：稍微放大并回弹 */
 @keyframes ww-beat {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
 
+
+/* 1. 定义模拟人生字体 */
 /* 字体配置 */
 @font-face {
   font-family: 'Sims4Font';
+  /* 路径指向你 public/fonts/ 下的文件，后缀改为 .woff */
   src: url('/fonts/SimsSans.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
+/* 2. 应用到全站变量 */
+:root {
+  /* 基础字体：优先使用 Sims4Font */
+  --vp-font-family-base: 'Sims4Font', "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --vp-font-family-mono: 'Sims4Font', monospace;
+}
+
+/* 3. 针对文本渲染进行平滑优化 */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
+/* 4. 标题加强（模拟人生风格通常标题很显眼） */
+h1, h2, h3, h4, .VPNavBar .title {
+  font-family: 'Sims4Font', sans-serif !important;
+  letter-spacing: 0.03em; /* 稍微增加间距，更有游戏感 */
 :root {
   --vp-font-family-base: 'Sims4Font', sans-serif;
   --vp-font-family-mono: 'Sims4Font', monospace;
 }
 
+/* 5. 如果你之前那个侧边栏图标也要对齐字体 */
+.VPSidebarItem.level-0 .text {
+  font-family: 'Sims4Font', sans-serif;
+  font-weight: 600;
 h1, h2, h3, h4, .VPNavBar .title {
   font-family: 'Sims4Font', sans-serif !important;
   letter-spacing: 0.03em;
