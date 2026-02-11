@@ -18,9 +18,9 @@ description: 模拟人生4 最强大的功能性模组 MCCC 下载与安装教�
 
 ::: warning ⚠️ 脚本安全警示
 **严禁存放过深**：
-请务必保证 `.ts4script` 文件位于 `Mods/WickedWhims/` 目录下。
-- ✅ 正确：`Mods/WickedWhims/WickedWhims.ts4script`
-- ❌ 错误：`Mods/功能类/绅士/WickedWhims/WickedWhims.ts4script`
+请务必保证 `.ts4script` 文件位于 `Mods\McCmdCenter_AllModules_2026_1_1` 目录下。(McCmdCenter_AllModules_2026_1_1为默认解压包名称)
+- ✅ 正确：`\Documents\Electronic Arts\The Sims 4\Mods\McCmdCenter_AllModules_2026_1_1`
+- ❌ 错误：`\Documents\Electronic Arts\The Sims 4\Mods\功能类\MC控制中心\`
 放错路径将导致游戏内**没有任何菜单显示**。
 :::
 
@@ -40,8 +40,8 @@ MCCC 是《模拟人生4》的“上帝面板”。如果你只能安装一个�
    `文档 \ Electronic Arts \ The Sims 4 \ Mods`
    
 ### 4. **注意层级**：MCCC 的脚本文件（.ts4script）**最多只能放在一层子文件夹内**。
-   * ✅ `Mods/MCCC_Folder/xxx.ts4script`
-   * ❌ `Mods/Tools/MCCC_Folder/xxx.ts4script` (会导致无法识别)
+   * ✅ `Mods/McCmdCenter_AllModules_2026_1_1/xxx.ts4script`
+   * ❌ `Mods/Tools/McCmdCenter_AllModules_2026_1_1/xxx.ts4script` (会导致无法识别)
    * 
 ### 5.**汉化教程**:下载好汉化的文件，将文件/文件夹（汉化一般都为后缀.package的文件）放入（一定是第一层！不能过深！！）
 <br>`Documents/Electronic Arts/The Sims 4/Mods/`
@@ -49,8 +49,8 @@ MCCC 是《模拟人生4》的“上帝面板”。如果你只能安装一个�
 ::: danger 注意事项
 **脚本深度限制**：
 请确保 `.ts4script` 文件就在 `Mods` 文件夹的一级子目录下。
-- ✅ 正确：`Mods/WickedWhimsMod/WickedWhims.ts4script`
-- ❌ 错误：`Mods/功能类/绅士包/WickedWhimsMod/WickedWhims.ts4script`
+- ✅ 正确：`Mods/McCmdCenter_AllModules_2026_1_1/xxx.ts4script`
+- ❌ 错误：`Mods/功能类/MC控制中心/McCmdCenter_AllModules_2026_1_1/xxx.ts4script`
 :::
 
 ---
@@ -83,7 +83,7 @@ MCCC 是《模拟人生4》的“上帝面板”。如果你只能安装一个�
 
 | 版本类型 | 推荐人群 | 下载链接 |
 | :--- | :--- | :--- |
-| **最新稳定版** | 普通玩家 (推荐) | [官方发布页](https://deaderpool-mccc.com/downloads.html)) |
+| **最新稳定版** | 普通玩家 (推荐) | [官方发布页](https://deaderpool-mccc.com/downloads.html) |
 | **中文汉化补丁** | 习惯中文界面的玩家 | [中文汉化包推荐（请尊重原作者）](https://www.abonnie.uk/mc)  |
 
 > [!TIP] 提示
