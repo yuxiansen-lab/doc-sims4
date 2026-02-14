@@ -36,3 +36,12 @@ export default {
     app.component('AgeGate', AgeGate)
   }
 }
+
+//404
+module.exports = {
+  // 其他配置...
+  themeConfig: {
+    // 其他配置...
+    notFound: '/404'
+  }
+}
