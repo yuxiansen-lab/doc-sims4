@@ -218,6 +218,7 @@ html {
 h1, h2, h3, h4, .VPNavBar .title {
   font-family: 'Sims4Font', sans-serif !important;
   letter-spacing: 0.03em; /* 稍微增加间距，更有游戏感 */
+}
 :root {
   --vp-font-family-base: 'Sims4Font', sans-serif;
   --vp-font-family-mono: 'Sims4Font', monospace;
@@ -227,6 +228,7 @@ h1, h2, h3, h4, .VPNavBar .title {
 .VPSidebarItem.level-0 .text {
   font-family: 'Sims4Font', sans-serif;
   font-weight: 600;
+}
 h1, h2, h3, h4, .VPNavBar .title {
   font-family: 'Sims4Font', sans-serif !important;
   letter-spacing: 0.03em;
