@@ -4,19 +4,22 @@
  * ============================================================
  */
 :root {
-  --vp-c-brand-1: #5bb32d;           /* 鲜绿色：绿水晶色 */
-  --vp-c-brand-2: #4ca125;           /* 深绿色 */
+  /* 模拟人生核心绿色 */
+  --vp-c-brand-1: #5bb32d;
+  --vp-c-brand-2: #4ca125;
   --vp-c-brand-3: #3e8d1d;
   --vp-c-brand-soft: rgba(91, 179, 45, 0.1);
 
+  /* UI 样式：大圆角更像游戏菜单 */
   --vp-button-brand-border-radius: 25px;
   --vp-card-border-radius: 15px;
   --vp-nav-logo-height: 32px;
 
+  /* 提示框同步颜色 */
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
 
-  /* 首页英雄区渐变 */
+  /* 首页 Hero 区域特效 */
   --vp-home-hero-name-background: linear-gradient(135deg, #5bb32d 0%, #2da4ff 100%);
   --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(91, 179, 45, 0.6) 50%, rgba(71, 202, 255, 0.6) 50%);
   --vp-home-hero-image-filter: blur(60px);
@@ -26,7 +29,7 @@
   --vp-font-family-mono: 'Sims4Font', monospace;
 }
 
-/* 首页大标题 */
+/* 首页大标题加粗 */
 .VPHero .name {
   filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
   font-weight: 900 !important;
@@ -34,11 +37,11 @@
 
 /**
  * ============================================================
- * 第二部分：组件与交互
+ * 第二部分：组件样式 (卡片、按钮、侧边栏)
  * ============================================================
  */
 
-/* 特性卡片 */
+/* 特性卡片样式 */
 .VPFeature {
   background-color: var(--vp-c-bg-soft) !important; 
   border: 1px solid var(--vp-c-gutter) !important;
@@ -52,13 +55,13 @@
   box-shadow: 0 10px 25px rgba(91, 179, 45, 0.15);
 }
 
-/* 侧边栏活动项 */
+/* 侧边栏高亮项 */
 .VPSidebarItem.is-active > .item > .link .text {
   color: var(--vp-c-brand-1) !important;
   font-weight: bold;
 }
 
-/* 品牌按钮 */
+/* 品牌按钮样式 */
 .VPButton.brand {
   background-color: var(--vp-c-brand-1) !important;
   transition: all 0.2s ease;
@@ -72,11 +75,11 @@
 
 /**
  * ============================================================
- * 第三部分：动画 (绿水晶 & 心跳)
+ * 第三部分：动画特效 (绿水晶旋转 & 心跳)
  * ============================================================
  */
 
-/* 绿水晶 3D 旋转 */
+/* 绿水晶 Logo 3D 旋转 */
 .plumbob-logo {
   width: 24px;
   height: auto;
@@ -93,7 +96,7 @@
   to { transform: perspective(400px) rotateY(360deg); }
 }
 
-/* 侧边栏小图标样式 */
+/* 侧边栏 WW 图标基础样式 */
 .ww-icon-sidebar {
   width: 18px;
   height: 18px;
@@ -103,9 +106,24 @@
   border-radius: 4px;
 }
 
+/* WW 心跳动画 */
+.ww-heart-main {
+  width: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  filter: drop-shadow(0 0 5px rgba(189, 52, 254, 0.8));
+  animation: ww-beat 1.2s ease-in-out infinite;
+}
+
+@keyframes ww-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 /**
  * ============================================================
- * 第四部分：字体渲染
+ * 第四部分：字体加载与全局优化
  * ============================================================
  */
 @font-face {
@@ -118,6 +136,7 @@
 
 html {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
@@ -129,8 +148,4 @@ h1, h2, h3, h4, .VPNavBar .title {
 .VPSidebarItem.level-0 .text {
   font-family: 'Sims4Font', sans-serif;
   font-weight: 600;
-}
-h1, h2, h3, h4, .VPNavBar .title {
-  font-family: 'Sims4Font', sans-serif !important;
-  letter-spacing: 0.03em;
 }
