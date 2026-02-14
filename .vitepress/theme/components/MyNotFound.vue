@@ -1,104 +1,85 @@
 <template>
-  <div class="sims-404-container">
-    <div class="sims-404-content">
-      <img src="/plumbob.png" alt="Plumbob" class="giant-plumbob" />
-      
-      <h1 class="sims-404-title">404</h1>
-      <h2 class="sims-404-subtitle">Sul Sul! 你的小人似乎迷路了...</h2>
-      
-      <p class="sims-404-desc">
-        你想找的页面可能被外星人绑架了，或者已经被死神带走。<br>
-        别慌，点击下方按钮可以安全回家。
-      </p>
-
-      <a href="/" class="sims-home-btn">
-        传送到安全地带
-      </a>
+  <div class="minimal-404">
+    <div class="content">
+      <h1 class="code">404</h1>
+      <p class="title">页面未找到</p>
+      <div class="divider"></div>
+      <p class="quote">山重水复疑无路，柳暗花明又一村</p>
+      <a href="/" class="back-link">踏上归途</a>
     </div>
   </div>
 </template>
 
 <style scoped>
-.sims-404-container {
+/* 容器全屏并设置淡雅背景 */
+.minimal-404 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff5ec 0%, #eef3ff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
-  padding: 40px 20px;
+  z-index: 999; /* 确保盖住导航栏 */
+  font-family: var(--vp-font-family-base);
+}
+
+.content {
   text-align: center;
 }
 
-.sims-404-content {
-  background: var(--vp-c-bg-soft);
-  padding: 60px 40px;
-  border-radius: 24px;
-  border: 2px solid var(--vp-c-brand-soft);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  max-width: 600px;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-.sims-404-content:hover {
-  transform: translateY(-5px);
-  border-color: var(--vp-c-brand-1);
-}
-
-/* 巨型绿水晶悬浮动画 */
-.giant-plumbob {
-  width: 80px;
-  margin: 0 auto 20px;
-  display: block;
-  filter: drop-shadow(0 10px 15px rgba(91, 179, 45, 0.4));
-  animation: float-up-down 3s ease-in-out infinite;
-}
-
-@keyframes float-up-down {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-15px) scale(1.05); }
-}
-
-.sims-404-title {
-  font-size: 84px;
-  font-weight: 900;
+.code {
+  font-size: 120px;
+  font-weight: 600;
+  color: #333;
   margin: 0;
-  /* 渐变文字效果 */
-  background: linear-gradient(135deg, #5bb32d 0%, #2da4ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   line-height: 1;
 }
 
-.sims-404-subtitle {
+.title {
   font-size: 24px;
-  font-weight: bold;
-  margin: 20px 0 15px;
-  color: var(--vp-c-text-1);
+  color: #666;
+  margin-top: 10px;
 }
 
-.sims-404-desc {
+.divider {
+  width: 40px;
+  height: 1px;
+  background-color: #ccc;
+  margin: 30px auto;
+}
+
+.quote {
   font-size: 16px;
-  color: var(--vp-c-text-2);
-  line-height: 1.6;
-  margin-bottom: 35px;
+  color: #888;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
 }
 
-.sims-home-btn {
+/* 按钮样式：复刻截图中的蓝色细圆角边框 */
+.back-link {
   display: inline-block;
-  background-color: var(--vp-c-brand-1);
-  color: #ffffff !important;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 14px 36px;
-  border-radius: 30px;
+  border: 1px solid #3e63ed;
+  color: #3e63ed !important;
+  padding: 8px 32px;
+  border-radius: 20px;
+  font-size: 14px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 15px rgba(91, 179, 45, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.sims-home-btn:hover {
-  background-color: var(--vp-c-brand-2);
-  transform: scale(1.05);
-  box-shadow: 0 12px 20px rgba(91, 179, 45, 0.4);
+.back-link:hover {
+  background: #3e63ed;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(62, 99, 237, 0.2);
+}
+
+/* 适配移动端 */
+@media (max-width: 768px) {
+  .code { font-size: 80px; }
+  .title { font-size: 20px; }
 }
 </style>
